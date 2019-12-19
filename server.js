@@ -1,6 +1,7 @@
 const path = require('path');
 const express = require('express');
 const compression = require('compression');
+const data = require('app/insertdb');
 
 const app = express(),
     DIST_DIR = __dirname,
