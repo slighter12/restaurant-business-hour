@@ -3,10 +3,10 @@ html(lang='en')
     head
         title search restautant info
     body
-        select
+        select#week
             each variable in ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
                 option(value=variable) #{variable}
-        select
+        select#time
             -var n = 0
             while n <=24
                 -var time = `${n}:00`
