@@ -1,6 +1,18 @@
 doctype html
 html(lang='en')
     head
-        title test
+        title search restautant info
     body
-        #root hello world!
+        select
+            each variable in ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+                option(value=variable) #{variable}
+        select
+            -var n = 0
+            while n <=24
+                -var time = `${n}:00`
+                option(value=time) #{time}
+                -time=`${n}:30`
+                option(value=time) #{time}
+                -n++
+        .searchButton
+            input(type="submit")
