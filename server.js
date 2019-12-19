@@ -12,9 +12,7 @@ app.use(compression());
 app.use(express.json());
 app.use('/', express.static(path.join(DIST_DIR, 'dist')));
 
-app.get('/', (req, res) => {
-    res.sendFile(HTML_FILE);
-});
+app.use('/search', data);
 
 app.listen(PORT, () => {
     console.log(`App listen to ${PORT} ...`)
