@@ -20,11 +20,8 @@ const clientConfig = {
         rules: [
         {
             test: /\.js$/,
-            exclude: /node_module/,
-            loader: 'babel-loader',
-            options: {
-                presets: ['@babel/preset-env']
-            },
+            exclude: /node_modules/,
+            use: [ 'babel-loader' ],
         },
         {
             test: /\.pug$/,
@@ -48,7 +45,7 @@ const clientConfig = {
             filename: 'index.html',
         }),
         new MiniCssExtractPlugin({
-            filename: 'app.css'
+            filename: 'style.css'
         })
     ]
 };
