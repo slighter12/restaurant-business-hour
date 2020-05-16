@@ -1,3 +1,4 @@
+@import "~timepicker.js/dist/timepicker.css"
 =box-sizing($box-model)
   -webkit-box-sizing: $box-model
   -moz-box-sizing: $box-model
@@ -7,7 +8,9 @@
   align-items: center
 body
   background: #f2eef2
+  width: 300px
   #container
+    position: relative
+    column-count: 2
     .col
-      position: relative
       +box-sizing(border-box)

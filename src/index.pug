@@ -3,16 +3,20 @@ html(lang='en')
     head
         title search restautant info
     body
-        select#week
-            each variable in ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
-                option(value=variable) #{variable}
-        select#time
-            -var n = 0
-            while n <=24
-                -var time = `${n}:00`
-                option(value=time) #{time}
-                -time=`${n}:30`
-                option(value=time) #{time}
-                -n++
+        #container
+            .col
+                .main-select#date Date
+                    input(
+                        type='date'
+                        name='date'
+                        min=new Date().toISOString().split('T')[0]
+                    )
+            .col
+                .main-select#time Time
+                    input(
+                        type='text'
+                        id='timezone'
+                        placeholder=' -- : -- '
+                    )
         .searchButton
             input(type="submit")

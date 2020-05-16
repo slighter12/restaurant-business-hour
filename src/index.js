@@ -1,5 +1,6 @@
 import './app.sass';
 import 'whatwg-fetch';
+import { getDateAndTime } from './searchingtime';
 
 const serverAddress = location.href;
 
@@ -24,19 +25,11 @@ function getrestaurantinfo(url, data) {
         console.log(data)
     })
 }
-function getweekandtime() {
-    let eweek = document.getElementById('week');
-    let week = eweek.options[eweek.selectedIndex].value;
-    let etime = document.getElementById('time');
-    let time = etime.options[etime.selectedIndex].value;
-    return {week, time}
-}
 
 const submit = document.querySelector('.searchButton');
 submit.addEventListener('click', () => {
-    let data = getweekandtime();
+    let data = getDateAndTime();
     console.log(data);
-    getrestaurantinfo(`${serverAddress}search`, data);
+    //getrestaurantinfo(`${serverAddress}search`, data);
     console.log("work");
 });
-
