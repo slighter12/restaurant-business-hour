@@ -18,7 +18,7 @@ function getrestaurantinfo(url, data) {
         mode: 'cors', // no-cors, cors, *same-origin
         redirect: 'follow', // manual, *follow, error
         referrer: 'no-referrer', // *client, no-referrer
-    }).then(response => {
+    }).then( response => {
         if (!response.ok) throw new Error(`HTTP error, status = ${response.status}`);
         return response.json()
     }).then( data => {
@@ -30,6 +30,5 @@ const submit = document.querySelector('.searchButton');
 submit.addEventListener('click', () => {
     let data = getDateAndTime();
     console.log(data);
-    //getrestaurantinfo(`${serverAddress}search`, data);
-    console.log("work");
+    getrestaurantinfo(`${serverAddress}search`, data);
 });
