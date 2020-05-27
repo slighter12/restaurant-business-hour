@@ -23,6 +23,13 @@ function getrestaurantinfo(url, data) {
         return response.json()
     }).then( data => {
         console.log(data)
+        document.getElementById("search-result").innerHTML = '';
+        Object.keys(data).forEach( item => {
+            const node = document.createElement("li");
+            const textnode = document.createTextNode(`${item} working during ${data[item]}`);
+            node.appendChild(textnode);
+            document.getElementById("search-result").appendChild(node);
+        })
     })
 }
 
